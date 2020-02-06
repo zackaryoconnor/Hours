@@ -29,10 +29,16 @@ class HomeController: UITableViewController {
     
     
     fileprivate func setupNavBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddNewHours))
         navigationItem.rightBarButtonItem?.tintColor = .systemGreen
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Hours"
+    }
+    
+    
+    @objc fileprivate func handleAddNewHours() {
+        let vc = AddNewHoursController()
+        present(vc, animated: true)
     }
     
 }
@@ -70,3 +76,12 @@ class HomeCell: UITableViewCell {
     }
     
 }
+
+
+
+
+
+
+
+
+
